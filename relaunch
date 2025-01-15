@@ -5,8 +5,11 @@ function onTOGGLER()
     print("Enabled")
     task.wait(1)
     loadstring(game:HttpGet("https://raw.githubusercontent.com/xalcohol/testREPOS/refs/heads/main/autRcheck"))()
-    task.wait(1)
-    cas:UnbindAction("Toggle")
 end    
 
 cas:BindAction("Toggle", onTOGGLER, false, Enum.KeyCode.B)
+
+UIS.InputBegan:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.B then
+        cas:UnbindAction("Toggle")
+end)
