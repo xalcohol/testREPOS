@@ -4,9 +4,12 @@ local autR = true
 
 function onB()
   autR = false
-  cas:UnbindAction("B")
-  task.wait(1)
-  print("Disabled")
+  CAS:UnbindAction("B")
+    task.wait(1)
+    print("Disabled")
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/xalcohol/testREPOS/refs/heads/main/relaunch"))()
+    task.wait(1)
+    print("Reloaded")
 end
 
 while autR == true do 
@@ -14,4 +17,4 @@ while autR == true do
       game:GetService("ReplicatedStorage"):WaitForChild("Universe"):WaitForChild("Network"):WaitForChild("Remotes"):WaitForChild("Rebirth"):FireServer()
 end
 
-cas:BindAction("B", onB, false, Enum.KeyCode.B)
+CAS:BindAction("B", onB, false, Enum.KeyCode.B)
