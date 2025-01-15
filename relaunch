@@ -5,7 +5,7 @@ function onTOGGLER()
     cas:UnbindAction("Toggle")
     task.wait(1)
     print("Enabled")
-    task.wait(1)
+    task.wait(5)
     loadstring(game:HttpGet("https://raw.githubusercontent.com/xalcohol/testREPOS/refs/heads/main/autRcheck"))()
 end    
 
