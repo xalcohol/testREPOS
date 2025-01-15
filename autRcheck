@@ -9,14 +9,17 @@ function onB()
     task.wait(1)
     print("Disabled")
         task.wait(1)
-        cas:UnbindAction("B")
-    task.wait(1)
         loadstring(game:HttpGet("https://raw.githubusercontent.com/xalcohol/testREPOS/refs/heads/main/relaunch"))()
-        task.wait(1)
-        print("Reloaded")
+    task.wait(1)
+    print("Reloaded")
 end
 
 cas:BindAction("B", onB, false, Enum.KeyCode.B)
+
+UIS.InputBegan:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.B then
+        cas:UnbindAction("B")
+end)
 
 while autR == true do 
     wait(2)
