@@ -2,23 +2,27 @@ local UIS = game:GetService('UserInputService')
 local cas = game:GetService("ContextActionService")
 local autR = true
 
-function onL()
-    cas:UnbindAction("L")
+while autR == true do 
+    wait(2)
+      game:GetService("ReplicatedStorage"):WaitForChild("Universe"):WaitForChild("Network"):WaitForChild("Remotes"):WaitForChild("Rebirth"):FireServer()
+end
+
+function onB()
+    cas:UnbindAction("B")
     task.wait(1)
     print("Disabling")
         task.wait(1)
         autR = false
     task.wait(1)
     print("Disabled")
-        task.wait(2)
+end
+
+cas:BindAction("B", onB, false, Enum.KeyCode.B)
+
+UIS.InputBegan:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.R then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/xalcohol/testREPOS/refs/heads/main/relaunch"))()
-    task.wait(3)
-    print("Reloaded")
-end
-
-cas:BindAction("L", onL, false, Enum.KeyCode.L)
-
-while autR == true do 
-    wait(2)
-      game:GetService("ReplicatedStorage"):WaitForChild("Universe"):WaitForChild("Network"):WaitForChild("Remotes"):WaitForChild("Rebirth"):FireServer()
-end
+        task.wait(3)
+        print("Reloaded")
+    end
+end)
