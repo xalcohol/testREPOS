@@ -10,9 +10,3 @@ function onTOGGLER()
 end    
 
 cas:BindAction("Toggle", onTOGGLER, false, Enum.KeyCode.B)
-
-UIS.InputBegan:Connect(function(input)
-    if input.KeyCode == Enum.KeyCode.B then
-        cas:UnbindAction("Toggle")
-    end
-end)
