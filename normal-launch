@@ -1,0 +1,21 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/alyssagithub/Scripts/refs/heads/main/FrostByte/Initiate.lua"))()
+
+local UIS = game:GetService('UserInputService')
+local autR = true
+
+UIS.InputBegan:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.B then
+        if autR == true then
+            autR = false
+        else
+            autR = true
+        end
+    end
+
+    if input.KeyCode == Enum.KeyCode.B then
+        while autR == true do
+            wait(1)
+            game:GetService("ReplicatedStorage"):WaitForChild("Universe"):WaitForChild("Network"):WaitForChild("Remotes"):WaitForChild("Rebirth"):FireServer()
+        end
+    end
+end)
