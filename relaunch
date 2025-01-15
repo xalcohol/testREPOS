@@ -5,8 +5,10 @@ function onTOGGLER()
     cas:UnbindAction("Toggle")
     task.wait(1)
     print("Enabled")
-    task.wait(5)
+    task.wait(2)
     loadstring(game:HttpGet("https://raw.githubusercontent.com/xalcohol/testREPOS/refs/heads/main/autRcheck"))()
+    task.wait(1)
+    cas:UnbindAction("Toggle")
 end    
 
 cas:BindAction("Toggle", onTOGGLER, false, Enum.KeyCode.B)
