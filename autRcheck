@@ -2,8 +2,8 @@ local UIS = game:GetService('UserInputService')
 local cas = game:GetService("ContextActionService")
 local autR = true
 
-function onB()
-    cas:UnbindAction("B")
+function onL()
+    cas:UnbindAction("L")
     task.wait(1)
     print("Disabling")
         task.wait(1)
@@ -16,7 +16,7 @@ function onB()
     print("Reloaded")
 end
 
-cas:BindAction("B", onB, false, Enum.KeyCode.B)
+cas:BindAction("L", onL, false, Enum.KeyCode.L)
 
 while autR == true do 
     wait(2)
