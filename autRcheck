@@ -1,11 +1,14 @@
+
 local UIS = game:GetService('UserInputService')
 local autR = true
 
 UIS.InputBegan:Connect(function(input)
     if input.KeyCode == Enum.KeyCode.B then
-        autR = false
-    else
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/xalcohol/testREPOS/refs/heads/main/autRcheck"))()
+        if autR == true then
+            autR = false
+        else
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/xalcohol/testREPOS/refs/heads/main/autRcheck"))()
+        end
     end
 end)
 
