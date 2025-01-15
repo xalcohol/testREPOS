@@ -8,9 +8,9 @@ function onB()
         autR = false
     task.wait(1)
     print("Disabled")
-        task.wait(1)
+        task.wait(2)
         loadstring(game:HttpGet("https://raw.githubusercontent.com/xalcohol/testREPOS/refs/heads/main/relaunch"))()
-    task.wait(1)
+    task.wait(3)
     print("Reloaded")
 end
 
