@@ -3,6 +3,8 @@ local cas = game:GetService("ContextActionService")
 local autR = true
 
 function onB()
+    cas:UnbindAction("B")
+    task.wait(1)
     print("Disabling")
         task.wait(1)
         autR = false
@@ -15,11 +17,6 @@ function onB()
 end
 
 cas:BindAction("B", onB, false, Enum.KeyCode.B)
-
-UIS.InputBegan:Connect(function(input)
-    if input.KeyCode == Enum.KeyCode.B then
-        cas:UnbindAction("B")
-end)
 
 while autR == true do 
     wait(2)
