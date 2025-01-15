@@ -1,0 +1,17 @@
+local UIS = game:GetService('UserInputService')
+local CAS = game:GetService("ContextActionService")
+local autR = true
+
+function onB()
+  autR = false
+  cas:UnbindAction("B")
+  task.wait(1)
+  print("Disabled")
+end
+
+while autR == true do 
+    wait(2)
+      game:GetService("ReplicatedStorage"):WaitForChild("Universe"):WaitForChild("Network"):WaitForChild("Remotes"):WaitForChild("Rebirth"):FireServer()
+end
+
+cas:BindAction("B", onB, false, Enum.KeyCode.B)
