@@ -6,4 +6,4 @@ function onTOGGLER()
     print("Enabled")
 end    
     
-cas:BindAction("Toggle", onTOGGLER, false, Enum.KeyCode.B)
+CAS:BindAction("Toggle", onTOGGLER, false, Enum.KeyCode.B)
