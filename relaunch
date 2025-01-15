@@ -2,6 +2,8 @@ local UIS = game:GetService('UserInputService')
 local cas = game:GetService("ContextActionService")
 
 function onTOGGLER()
+    cas:UnbindAction("Toggle")
+    task.wait(1)
     print("Enabled")
     task.wait(1)
     loadstring(game:HttpGet("https://raw.githubusercontent.com/xalcohol/testREPOS/refs/heads/main/autRcheck"))()
